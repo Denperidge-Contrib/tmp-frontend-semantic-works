@@ -13,6 +13,7 @@ export default class DocsController extends Controller {
       console.log(repos)
       repos = repos.map((category) => {
         category.repos.map((repo) => {
+          repo.name = repo.displayName;
           repo.link = true;
           repo.value = repo.contentBaseUrl + "README.md";
           return repo;

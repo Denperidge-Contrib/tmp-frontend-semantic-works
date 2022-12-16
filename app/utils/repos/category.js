@@ -3,10 +3,11 @@ import data from './data';
 const overrides = data.overrides;
 
 export class Category {
-    constructor(id, name, regex) {
+    constructor(id, name, regex, regexPriority) {
         this.id = id;
         this.name = name;
-        this.regex = regex;
+        this.regex = new RegExp(regex, 'i');
+        this.regexPriority = regexPriority
         this.repos = [];
     }
 }
@@ -19,7 +20,7 @@ function checkForOverrides(repo, categories) {
     overrides.forEach((override) => {
         // If an override 
         if (overrideMatched) { return; }
-        let regex = new RegExp(override.regex);
+        let regex = new RegExp(override.regex, 'i');
 
         if (repo.name.match(regex)) {
 
@@ -45,12 +46,18 @@ export function assignRepoToCategories(repo, categories) {
 
     console.log("Regular assigning " + repo.name)
 
-    for (let i = 0; i < categories.length; i++) {
-        let category = categories[i];
-
-        if (repo.name.match(category.regex)) {
-            category.repos.push(repo);
-            return;
+    // Lower priority is better
+    let selectedCategory = {regexPriority: 99};
+    categories.forEach((checkingCategory) => {
+        if (repo.name.match(checkingCategory.regex)) {
+            console.log('match')
+            if (checkingCategory.regexPriority < selectedCategory.regexPriority) {
+                selectedCategory = checkingCategory;
+            }
         }
-    }
+    });
+    
+    console.log(selectedCategory)
+    selectedCategory.repos.push(repo);
+
 }

@@ -1,4 +1,40 @@
 {
+    "categories": [
+        {
+            "name": "Core",
+            "id": "core",
+            "regex": "mu-.*",
+            "regexPriority": 4
+        },
+        {
+            "name": "Templates",
+            "id": "templates",
+            "regex": ".*-template",
+            "regexPriority": 1
+        },
+        {
+            "name": "Microservices",
+            "id": "microservices",
+            "regex": ".*-service",
+            "regexPriority": 2
+        },
+        {
+            "name": "Ember Addons",
+            "id": "ember-addons",
+            "regex": "ember-.*",
+            "regexPriority": 3
+        },
+        {
+            "name": "Tools",
+            "id": "tools",
+            "regexPriority": 5
+        }
+    ],
+
+    "prefixes": [
+        "ember-", "cl-", "mu-"
+    ],
+
     "overrides": [
         {
             "regex": "site-.*",
