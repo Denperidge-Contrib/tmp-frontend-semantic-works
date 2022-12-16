@@ -1,0 +1,20 @@
+{
+    "overrides": [
+        {
+            "regex": "site-.*",
+            "category": false
+        },
+        {
+            "regex": "mu-cli",
+            "category": "tools"
+        },
+        {
+            "regex": "mu-cl-support",
+            "category": false
+        },
+        {
+            "regex": "presentation-.*",
+            "category": false
+        }
+    ]
+}
