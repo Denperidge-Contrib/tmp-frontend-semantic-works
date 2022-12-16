@@ -39,13 +39,14 @@ jobs:
         run: npm install
       - name: Build Ember application
         run: npx ember build
-          
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: '.dist/'
+          path: './dist/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
