@@ -5,3 +5,5 @@ A set of tools that can be used on deploy or runtime, that:
 - Scans and sorts semantic.works repos
 
 Entrypoint: `index.js`
+
+export NODE_OPTIONS=--openssl-legacy-provider

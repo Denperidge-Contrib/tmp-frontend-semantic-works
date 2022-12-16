@@ -1,11 +1,48 @@
 import Controller from '@ember/controller';
+import getRepos from 'semantic-works/utils/repos';
+import { tracked } from '@glimmer/tracking';
+
 
 export default class DocsController extends Controller {
+  @tracked docTree;
+  
+  constructor() {
+    super(...arguments);
+
+    getRepos().then((repos => {
+      console.log(repos)
+      repos = repos.map((category) => {
+        category.repos.map((repo) => {
+          repo.link = true;
+          repo.value = repo.contentBaseUrl + "README.md";
+          return repo;
+        });
+
+        category.link = false;
+        category.value = category.repos;
+
+        return category;
+      });
+
+      console.log(repos)
+      this.set("docTree", [
+        {
+          "name": "Documentation",
+          "link": false,
+          "value": repos
+        }])
+
+    }));
+    
+  }
+
   docTree = [
     {
       "name": "Documentation",
       "link": false,
-      "value": [
+      "value": []
+      /*
+      [
         {
           "name": "Core",
           "link": false,
@@ -59,5 +96,7 @@ export default class DocsController extends Controller {
           ]
         }
       ]}
+      */
+    }
   ];
 }

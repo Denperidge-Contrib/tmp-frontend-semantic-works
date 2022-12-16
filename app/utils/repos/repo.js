@@ -1,5 +1,4 @@
-//import fetch from 'ember-fetch';
-import fetch from 'node-fetch';
+//import fetch from 'fetch';
 
 export default class Repo {
     constructor(name, owner, repoUrl, mainBranch, contentBaseUrl) {

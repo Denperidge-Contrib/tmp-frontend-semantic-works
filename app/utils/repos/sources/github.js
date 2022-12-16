@@ -1,6 +1,7 @@
-//import fetch from 'ember-fetch';
-import fetch from 'node-fetch';
-import Repo from '../repo.js';
+//import fetch from 'fetch';
+//import fetch from 'node-fetch';
+//const Repo = require('../repo');
+import Repo from '../repo';
 
 async function listRepos(user='mu-semtech') {
     let response = await fetch(`https://api.github.com/orgs/${user}/repos`);

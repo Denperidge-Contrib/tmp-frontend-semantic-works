@@ -1,4 +1,5 @@
-import data from './data.json' assert { type: 'json' };
+import data from './data';
+//const data = require('./data.json');
 const overrides = data.overrides;
 
 export class Category {
@@ -27,7 +28,7 @@ function checkForOverrides(repo, categories) {
             // category can be set to false to not add to docs
             if (override.category != false) {
                 categories
-                    .find(category => category.id.toLowerCase() == category.id.toLowerCase())
+                    .find(category => category.id.toLowerCase() == override.category.toLowerCase())
                     .repos.push(repo);
             }
         }

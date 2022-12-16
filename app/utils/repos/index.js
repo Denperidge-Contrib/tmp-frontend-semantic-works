@@ -1,8 +1,11 @@
-import { Category, assignRepoToCategories } from './category.js';
-import github from './sources/github.js';
+import { Category, assignRepoToCategories } from './category';
+import github from './sources/github';
+// imports didn't work, falling back on require
+//const { Category, assignRepoToCategories } = require('./category');
+//const github = require('./sources/github')
 
 
-export default async function repos() {
+export default async function getRepos() {
     // Get repo data 
     let repos = await github('mu-semtech');
 
