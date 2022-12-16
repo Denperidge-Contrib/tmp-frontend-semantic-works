@@ -17,11 +17,13 @@ export default async function getRepos() {
     });
     repos.forEach((repo) => {assignRepoToCategories(repo, categories)});
 
+    /*
     console.log(categories.forEach((category) => {
         console.log(category.name);
         console.log(category.repos)
         console.log('---')
     }));
+    */
 
     return categories;
 }

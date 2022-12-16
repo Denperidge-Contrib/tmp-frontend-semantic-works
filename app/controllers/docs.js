@@ -9,11 +9,12 @@ export default class DocsController extends Controller {
   constructor() {
     super(...arguments);
 
+
+
     getRepos().then((repos => {
       console.log(repos)
       repos = repos.map((category) => {
         category.repos.map((repo) => {
-          repo.name = repo.displayName;
           repo.link = true;
           repo.value = repo.contentBaseUrl + "README.md";
           return repo;
@@ -25,7 +26,6 @@ export default class DocsController extends Controller {
         return category;
       });
 
-      console.log(repos)
       this.set("docTree", [
         {
           "name": "Documentation",
@@ -101,3 +101,4 @@ export default class DocsController extends Controller {
     }
   ];
 }
+name

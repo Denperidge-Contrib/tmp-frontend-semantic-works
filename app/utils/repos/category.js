@@ -44,20 +44,16 @@ function checkForOverrides(repo, categories) {
 export function assignRepoToCategories(repo, categories) {
     if (checkForOverrides(repo, categories)) return;
 
-    console.log("Regular assigning " + repo.name)
 
     // Lower priority is better
     let selectedCategory = {regexPriority: 99};
     categories.forEach((checkingCategory) => {
         if (repo.name.match(checkingCategory.regex)) {
-            console.log('match')
             if (checkingCategory.regexPriority < selectedCategory.regexPriority) {
                 selectedCategory = checkingCategory;
             }
         }
     });
     
-    console.log(selectedCategory)
     selectedCategory.repos.push(repo);
-
 }

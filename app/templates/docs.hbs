@@ -1,1 +1,13 @@
-<Documentation @docTree={{this.docTree}}/>
+<!--<Documentation @docTree={{this.docTree}}/>-->
+<div class="pure-g">
+    <div class="pure-u-1-5">
+        <div class='sw-docs-menu'>
+            <MenuItems @docTree={{this.docTree}} @level={{0}}/>
+        </div>
+    </div>
+    <div class="pure-u-4-5">
+        <div class='sw-docs-contents'>
+            {{outlet}}
+        </div>
+    </div>
+</div>

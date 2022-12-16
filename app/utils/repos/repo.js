@@ -29,9 +29,11 @@ function unslug(slug) {
         let regex = new RegExp(`^${prefix}`, 'i')
         removePrefix = removePrefix.replace(regex, '');
     }) 
+    /*
     console.log(slug.indexOf('mu-'))
     console.log(slug.substring(3))
     console.log(removePrefix)
+    */
     let removeDashes = removePrefix.replace(/-/g, ' ');
     let capitalise = removeDashes[0].toUpperCase() + removeDashes.substring(1);
 
