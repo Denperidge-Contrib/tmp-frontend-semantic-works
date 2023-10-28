@@ -1,6 +1,8 @@
 # Note: Deprecated
 While this supercedes [semantic-docs](https://github.com/Denperidge-Redpencil/semantic-docs), this itself got superceded by [semantic.works](https://github.com/Denperidge-Redpencil/semantic.works)!
 
+Original archive was may 25 2023, yet this was temporarily lifted to change the domain
+
 # semantic-works
 
 This README outlines the details of collaborating on this Ember application.
