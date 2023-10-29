@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'semantic-works',
     environment,
-    rootURL: '/',
+    rootURL: '/automated-frontend-semantic-works/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
